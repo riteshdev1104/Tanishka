@@ -1,1 +1,68 @@
-<!-- Admin panel HTML placeholder -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tanishka Admin Panel</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+        }
+        #login, #panel {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #e91e63;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <h2>Admin Login</h2>
+        <input type="password" id="password" placeholder="Enter Password">
+        <br>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div id="panel" style="display:none;">
+        <h2>Send Message as Tanishka</h2>
+        <form method="POST" action="/send">
+            <input type="text" name="chat_id" placeholder="User Chat ID" required><br>
+            <textarea name="message" placeholder="Type your message..." rows="4" required></textarea><br>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <script>
+        function login() {
+            const pw = document.getElementById("password").value;
+            if (pw === "0110409") {
+                document.getElementById("login").style.display = "none";
+                document.getElementById("panel").style.display = "block";
+            } else {
+                alert("Incorrect password");
+            }
+        }
+    </script>
+</body>
+  </html>
+  
