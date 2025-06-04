@@ -18,5 +18,9 @@ def admin():
     return "Admin panel placeholder"
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
+    port_str = os.environ.get("PORT", "5000")
+    try:
+        port = int(port_str)
+    except ValueError:
+        port = 5000
     app.run(host="0.0.0.0", port=port)
